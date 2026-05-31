@@ -1,0 +1,29 @@
+<!-- Custom Wazuh detection rules for Home SIEM Lab -->
+<!-- Author: Your Name -->
+<!-- Date: May 2026 -->
+
+<group name="local,windows,">
+
+  <!-- Rule 1: Brute Force Detection -->
+  <!-- Fires when 5+ failed logins occur within 60 seconds -->
+  <!-- MITRE ATT&CK: T1110 - Brute Force -->
+  <rule id="100101" level="12" frequency="5" timeframe="60">
+    <if_matched_sid>60122</if_matched_sid>
+    <description>BRUTE FORCE DETECTED - Multiple failed logins in 60 seconds</description>
+    <mitre>
+      <id>T1110</id>
+    </mitre>
+  </rule>
+
+  <!-- Rule 2: Rogue Administrator Account -->
+  <!-- Fires when a new user is added to the administrators group -->
+  <!-- MITRE ATT&CK: T1136.001 - Create Local Account -->
+  <rule id="100102" level="14">
+    <if_sid>60109</if_sid>
+    <description>ROGUE ADMIN DETECTED - User added to administrators group</description>
+    <mitre>
+      <id>T1136.001</id>
+    </mitre>
+  </rule>
+
+</group>
