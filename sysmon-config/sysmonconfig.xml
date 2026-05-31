@@ -1,0 +1,8 @@
+<!-- Sysmon configuration based on SwiftOnSecurity sysmon-config -->
+<!-- Source: https://github.com/SwiftOnSecurity/sysmon-config -->
+<!-- Applied to Windows-Endpoint VM in this SIEM lab -->
+<!-- Install command used: -->
+<!-- Sysmon64.exe -accepteula -i sysmonconfig.xml -->
+
+<!-- Full config available at: -->
+<!-- https://github.com/SwiftOnSecurity/sysmon-config/blob/master/sysmonconfig-export.xml -->
